@@ -7,6 +7,10 @@ from task_manager import settings
 class TaskType(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
+    class Meta:
+        verbose_name = "task type"
+        verbose_name_plural = "task types"
+
     def __str__(self):
         return self.name
 
@@ -24,10 +28,10 @@ class Task(models.Model):
     deadline = models.DateTimeField()
     is_completed = models.BooleanField()
     priority = models.CharField(
-        choices=PRIORITY_CHOICES, default="medium"
+        choices=PRIORITY_CHOICES, default="medium", max_length=10
     )
     task_type = models.ForeignKey(
-        TaskType, on_delete=models.SET_NULL, related_name="tasks"
+        TaskType, on_delete=models.SET_NULL, related_name="tasks", null=True
     )
     assignees = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="tasks"
@@ -47,6 +51,8 @@ class Worker(AbstractUser):
 
     class Meta:
         ordering = ["position"]
+        verbose_name = "worker"
+        verbose_name_plural = "workers"
 
     def __str__(self):
         return f"{self.username} ({self.first_name} {self.last_name})"
