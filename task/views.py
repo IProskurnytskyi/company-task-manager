@@ -1,7 +1,9 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
+from task.forms import WorkerForm
 from task.models import TaskType, Task, Position, Worker
 
 
@@ -27,6 +29,20 @@ class TaskTypeListView(generic.ListView):
     context_object_name = "task_type_list"
 
 
+class TaskTypeCreateView(generic.CreateView):
+    model = TaskType
+    template_name = "task/task_type_form.html"
+    fields = "__all__"
+    success_url = reverse_lazy("task:task-type-list")
+
+
+class TaskTypeUpdateView(generic.UpdateView):
+    model = TaskType
+    template_name = "task/task_type_form.html"
+    fields = "__all__"
+    success_url = reverse_lazy("task:task-type-list")
+
+
 class TaskListView(generic.ListView):
     model = Task
 
@@ -35,8 +51,35 @@ class TaskDetailView(generic.DetailView):
     model = Task
 
 
+class TaskCreateView(generic.CreateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("task:task-list")
+
+
+class TaskUpdateView(generic.UpdateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("")
+
+    def get_success_url(self):
+        return reverse_lazy("task:task-detail", args=[self.object.pk])
+
+
 class PositionListView(generic.ListView):
     model = Position
+
+
+class PositionCreateView(generic.CreateView):
+    model = Position
+    fields = "__all__"
+    success_url = reverse_lazy("task:position-list")
+
+
+class PositionUpdateView(generic.UpdateView):
+    model = Position
+    fields = "__all__"
+    success_url = reverse_lazy("task:position-list")
 
 
 class WorkerListView(generic.ListView):
@@ -46,3 +89,17 @@ class WorkerListView(generic.ListView):
 
 class WorkerDetailView(generic.DetailView):
     model = Worker
+
+
+class WorkerCreateView(generic.CreateView):
+    model = Worker
+    form_class = WorkerForm
+    success_url = reverse_lazy("task:worker-list")
+
+
+class WorkerUpdateView(generic.UpdateView):
+    model = Worker
+    form_class = WorkerForm
+
+    def get_success_url(self):
+        return reverse_lazy("task:worker-detail", args=[self.object.pk])
