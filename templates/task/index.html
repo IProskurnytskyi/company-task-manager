@@ -1,5 +1,6 @@
-<html lang="en">
-  <body>
+{% extends "base.html" %}
+
+{% block content %}
     <h1>Welcome to the Task Manager Home Page!</h1>
     <p>The Task Manager has the following record counts:</p>
     <ul>
@@ -8,5 +9,4 @@
         <li><strong>Positions:</strong> {{ positions }}</li>
         <li><strong>Workers:</strong> {{ workers }}</li>
     </ul>
-  </body>
-</html>
+{% endblock %}
