@@ -31,9 +31,18 @@ class TaskListView(generic.ListView):
     model = Task
 
 
+class TaskDetailView(generic.DetailView):
+    model = Task
+
+
 class PositionListView(generic.ListView):
     model = Position
 
 
 class WorkerListView(generic.ListView):
+    model = Worker
+    queryset = Worker.objects.select_related("position")
+
+
+class WorkerDetailView(generic.DetailView):
     model = Worker
