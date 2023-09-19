@@ -22,7 +22,7 @@
         <tr>
           <td>{{ worker.id }}</td>
           <td>
-            <a href="{% url "task:worker-detail" worker.id %}">
+            <a href="{{ worker.get_absolute_url }}">
               {{ worker.username }} {% if user == worker %} (Me){% endif %}
             </a>
           </td>
