@@ -17,11 +17,15 @@ def index(request: HttpRequest) -> HttpResponse:
     positions = Position.objects.count()
     workers = Worker.objects.count()
 
+    num_visits = request.session.get("num_visits", 0)
+    request.session["num_visits"] = num_visits + 1
+
     context = {
         "task_types": task_types,
         "tasks": tasks,
         "positions": positions,
         "workers": workers,
+        "num_visits": num_visits + 1,
     }
 
     return render(request, "task/index.html", context)
