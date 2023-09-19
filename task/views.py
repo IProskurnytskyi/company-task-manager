@@ -43,6 +43,12 @@ class TaskTypeUpdateView(generic.UpdateView):
     success_url = reverse_lazy("task:task-type-list")
 
 
+class TaskTypeDeleteView(generic.DeleteView):
+    model = TaskType
+    success_url = reverse_lazy("task:task-type-list")
+    template_name = "task/task_type_confirm_delete.html"
+
+
 class TaskListView(generic.ListView):
     model = Task
 
@@ -66,6 +72,11 @@ class TaskUpdateView(generic.UpdateView):
         return reverse_lazy("task:task-detail", args=[self.object.pk])
 
 
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy("task:task-list")
+
+
 class PositionListView(generic.ListView):
     model = Position
 
@@ -79,6 +90,11 @@ class PositionCreateView(generic.CreateView):
 class PositionUpdateView(generic.UpdateView):
     model = Position
     fields = "__all__"
+    success_url = reverse_lazy("task:position-list")
+
+
+class PositionDeleteView(generic.DeleteView):
+    model = Position
     success_url = reverse_lazy("task:position-list")
 
 
@@ -103,3 +119,8 @@ class WorkerUpdateView(generic.UpdateView):
 
     def get_success_url(self):
         return reverse_lazy("task:worker-detail", args=[self.object.pk])
+
+
+class WorkerDeleteView(generic.DeleteView):
+    model = Worker
+    success_url = reverse_lazy("task:worker-list")
