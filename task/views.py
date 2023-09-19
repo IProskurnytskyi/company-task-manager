@@ -30,6 +30,7 @@ class TaskTypeListView(LoginRequiredMixin, generic.ListView):
     model = TaskType
     template_name = "task/task_type_list.html"
     context_object_name = "task_type_list"
+    paginate_by = 4
 
 
 class TaskTypeCreateView(LoginRequiredMixin, generic.CreateView):
@@ -54,6 +55,7 @@ class TaskTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
+    paginate_by = 4
 
 
 class TaskDetailView(LoginRequiredMixin, generic.DetailView):
@@ -81,6 +83,7 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
+    paginate_by = 4
 
 
 class PositionCreateView(LoginRequiredMixin, generic.CreateView):
@@ -103,6 +106,7 @@ class PositionDeleteView(LoginRequiredMixin, generic.DeleteView):
 class WorkerListView(LoginRequiredMixin, generic.ListView):
     model = Worker
     queryset = Worker.objects.select_related("position")
+    paginate_by = 4
 
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
