@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "task_manager.wsgi.application"
 
+LOGIN_REDIRECT_URL = "/"
+
 AUTH_USER_MODEL = "task.Worker"
 
 # Database

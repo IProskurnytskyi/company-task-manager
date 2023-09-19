@@ -1,4 +1,13 @@
 <ul class="list-group sidebar-nav">
+  {% if user.is_authenticated %}
+    <li class="list-group-item">Username: <a href="{{ user.get_absolute_url }}">{{ user.username }}</a></li>
+    <li class="list-group-item"><a href="{% url "logout" %}">Logout</a></li>
+  {% else %}
+    <li class="list-group-item"><a href="{% url "login" %}">Login</a></li>
+  {% endif %}
+
+  <br>
+
   <li class="list-group-item"><a href="{% url "task:index" %}">Home</a></li>
   <li class="list-group-item"><a href="{% url "task:task-type-list" %}">All Task Types</a></li>
   <li class="list-group-item"><a href="{% url "task:task-list" %}">All Tasks</a></li>
