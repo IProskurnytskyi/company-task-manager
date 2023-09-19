@@ -8,4 +8,9 @@
 
     <input type="submit" value="Submit" class="btn btn-primary">
   </form>
+  {% if object %}
+    <a href="{{ worker.get_absolute_url }}" class="btn btn-dark">Back</a>
+  {% else %}
+    <a href="{% url "task:worker-list" %}" class="btn btn-dark">Back</a>
+  {% endif %}
 {% endblock %}
