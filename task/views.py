@@ -141,3 +141,14 @@ def assign_delete_task(request, pk) -> HttpResponse:
     else:
         worker.tasks.add(pk)
     return HttpResponseRedirect(reverse("task:task-detail", args=[pk]))
+
+
+@login_required
+def mark_unmark_as_done(request, pk) -> HttpResponse:
+    task = Task.objects.get(id=pk)
+    if task.is_completed:
+        task.is_completed = False
+    else:
+        task.is_completed = True
+    task.save()
+    return HttpResponseRedirect(reverse("task:task-detail", args=[pk]))

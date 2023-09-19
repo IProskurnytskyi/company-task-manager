@@ -24,6 +24,16 @@
       Assign me to this task
     </a>
   {% endif %}
+
+  {% if task.is_completed %}
+    <a href="{% url "task:mark-unmark" task.id %}" class="btn btn-danger link-to-page">
+      Unmark as done
+    </a>
+  {% else %}
+    <a href="{% url "task:mark-unmark" task.id %}" class="btn btn-success link-to-page">
+      Mark as done
+    </a>
+  {% endif %}
   </h1>
 
   <hr>

@@ -21,6 +21,7 @@ from task.views import (
     WorkerUpdateView,
     WorkerDeleteView,
     assign_delete_task,
+    mark_unmark_as_done,
 )
 
 
@@ -59,6 +60,11 @@ urlpatterns = [
         "tasks/<int:pk>/assign-delete/",
         assign_delete_task,
         name="assign-delete"
+    ),
+    path(
+        "tasks/<int:pk>/mark-unmark/",
+        mark_unmark_as_done,
+        name="mark-unmark"
     ),
     path("positions/", PositionListView.as_view(), name="position-list"),
     path(
