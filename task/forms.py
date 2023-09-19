@@ -45,3 +45,21 @@ class TaskForm(forms.ModelForm):
             raise ValidationError("The deadline cannot be set more than 20 years into the future")
 
         return deadline
+
+
+class NameSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by name.."})
+    )
+
+
+class WorkerUsernameSearchForm(forms.Form):
+    username = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by username.."})
+    )
