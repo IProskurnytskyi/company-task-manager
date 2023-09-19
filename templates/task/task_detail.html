@@ -14,7 +14,18 @@
   <p>Description: {{ task.description }}</p>
   <h1>
     Assignees
+
+  {% if user in task.assignees.all %}
+    <a href="{% url "task:assign-delete" task.id %}" class="btn btn-danger link-to-page">
+      Delete me from this task
+    </a>
+  {% else %}
+    <a href="{% url "task:assign-delete" task.id %}" class="btn btn-success link-to-page">
+      Assign me to this task
+    </a>
+  {% endif %}
   </h1>
+
   <hr>
   <ul>
     {% for assignee in task.assignees.all %}

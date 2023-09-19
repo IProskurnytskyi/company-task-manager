@@ -48,7 +48,6 @@ class Task(models.Model):
         return reverse("task:task-detail", kwargs={"pk": self.pk})
 
 
-
 class Worker(AbstractUser):
     position = models.ForeignKey(
         "Position", on_delete=models.CASCADE, related_name="workers"

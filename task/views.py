@@ -1,8 +1,9 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 
 from task.forms import WorkerForm, TaskForm
@@ -130,3 +131,13 @@ class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
 class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Worker
     success_url = reverse_lazy("task:worker-list")
+
+
+@login_required
+def assign_delete_task(request, pk) -> HttpResponse:
+    worker = get_user_model().objects.get(id=request.user.id)
+    if Task.objects.get(id=pk) in worker.tasks.all():
+        worker.tasks.remove(pk)
+    else:
+        worker.tasks.add(pk)
+    return HttpResponseRedirect(reverse("task:task-detail", args=[pk]))
