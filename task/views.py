@@ -199,8 +199,12 @@ class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
         context = super().get_context_data(**kwargs)
         worker = self.get_object()
 
-        context["is_completed"] = Task.objects.filter(assignees=worker, is_completed=True)
-        context["not_completed"] = Task.objects.filter(assignees=worker, is_completed=False)
+        context["is_completed"] = Task.objects.filter(
+            assignees=worker, is_completed=True
+        )
+        context["not_completed"] = Task.objects.filter(
+            assignees=worker, is_completed=False
+        )
 
         return context
 
