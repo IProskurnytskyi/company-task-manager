@@ -17,16 +17,24 @@
   <p><strong>Is staff:</strong> {{ worker.is_staff }}</p>
 
   <div class="ml-3">
-    <h4>Tasks</h4>
+    <h2>Not completed tasks</h2>
+    {% for task in not_completed %}
+      <hr>
+      <p><strong>Name:</strong> {{ task.name }}</p>
+      <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
+    {% empty %}
+      <h6>There are no not completed tasks!</h6>
+    {% endfor %}
 
-    {% for task in worker.tasks.all %}
+    <h2>Completed tasks</h2>
+    {% for task in is_completed %}
         <hr>
         <p><strong>Name:</strong> {{ task.name }}</p>
         <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
         <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
-
     {% empty %}
-      <p>No tasks!</p>
+      <h6>There are no completed tasks!</h6>
     {% endfor %}
   </div>
 {% endblock %}

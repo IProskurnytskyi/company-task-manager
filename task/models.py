@@ -39,7 +39,7 @@ class Task(models.Model):
     )
 
     class Meta:
-        ordering = ["deadline"]
+        ordering = ["-deadline"]
 
     def __str__(self):
         return self.name
