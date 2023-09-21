@@ -1,16 +1,31 @@
 <ul class="list-group sidebar-nav">
   {% if user.is_authenticated %}
-    <li class="list-group-item">Username: <a href="{{ user.get_absolute_url }}">{{ user.username }}</a></li>
-    <li class="list-group-item"><a href="{% url "logout" %}">Logout</a></li>
+    <li class="list-group-item sidebar-bg-color">
+      <span class="font-weight-bold">Username:</span>
+      <a href="{{ user.get_absolute_url }}" class="ml-2">{{ user.username }}</a>
+    </li>
+    <li class="list-group-item sidebar-bg-color mb-3">
+      <a href="{% url 'logout' %}" class="btn btn-danger btn-block">Logout</a>
+    </li>
   {% else %}
-    <li class="list-group-item"><a href="{% url "login" %}">Login</a></li>
+    <li class="list-group-item sidebar-bg-color mb-3">
+      <a href="{% url 'login' %}" class="btn btn-primary btn-block">Login</a>
+    </li>
   {% endif %}
 
-  <br>
-
-  <li class="list-group-item"><a href="{% url "task:index" %}">Home</a></li>
-  <li class="list-group-item"><a href="{% url "task:task-type-list" %}">All Task Types</a></li>
-  <li class="list-group-item"><a href="{% url "task:task-list" %}">All Tasks</a></li>
-  <li class="list-group-item"><a href="{% url "task:position-list" %}">All Positions</a></li>
-  <li class="list-group-item"><a href="{% url "task:worker-list" %}">All Workers</a></li>
+  <li class="list-group-item sidebar-bg-color">
+    <a href="{% url 'task:index' %}" class="btn btn-info btn-block">Home</a>
+  </li>
+  <li class="list-group-item sidebar-bg-color">
+    <a href="{% url 'task:task-type-list' %}" class="btn btn-info btn-block">All Task Types</a>
+  </li>
+  <li class="list-group-item sidebar-bg-color">
+    <a href="{% url 'task:task-list' %}" class="btn btn-info btn-block">All Tasks</a>
+  </li>
+  <li class="list-group-item sidebar-bg-color">
+    <a href="{% url 'task:position-list' %}" class="btn btn-info btn-block">All Positions</a>
+  </li>
+  <li class="list-group-item sidebar-bg-color">
+    <a href="{% url 'task:worker-list' %}" class="btn btn-info btn-block">All Workers</a>
+  </li>
 </ul>

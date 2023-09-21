@@ -1,17 +1,40 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-    <h1>Welcome to the Task Manager Home Page!</h1>
-    <p>The Task Manager has the following record counts:</p>
-    <ul>
-        <li><strong>Task types:</strong> {{ task_types }}</li>
-        <li><strong>Tasks:</strong> {{ tasks }}</li>
-        <li><strong>Positions:</strong> {{ positions }}</li>
-        <li><strong>Workers:</strong> {{ workers }}</li>
-    </ul>
+  <style>
+    body {
+        background-image: url({% static "images/index.png" %});
+        background-size: cover;
+    }
+  </style>
+  <div class="jumbotron color">
+    <h1 class="display-color align">Welcome to the Task Manager</h1>
+    <p class="lead align">Manage your tasks efficiently with Task Manager.</p>
+  </div>
 
-    <p>You have visited this page
-        {{ num_visits }} time{{ num_visits|pluralize }}.
-    </p>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card color">
+        <div class="card-body">
+          <h2 class="card-title">Record Counts</h2>
+          <ul class="list-group">
+            <li class="list-group-item another-color"><strong>Task types:</strong> <span class="text-primary">{{ task_types }}</span></li>
+            <li class="list-group-item another-color"><strong>Tasks:</strong> <span class="text-primary">{{ tasks }}</span></li>
+            <li class="list-group-item another-color"><strong>Positions:</strong> <span class="text-primary">{{ positions }}</span></li>
+            <li class="list-group-item another-color"><strong>Workers:</strong> <span class="text-primary">{{ workers }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+    <div class="col-md-6">
+      <div class="card color">
+        <div class="card-body">
+          <h2 class="card-title">Page Visits</h2>
+          <p class="card-text">You have visited this page <span class="text-primary">{{ num_visits }}</span> time<span class="text-primary">{{ num_visits|pluralize }}</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

@@ -6,3 +6,44 @@ body {
     float: right;
     margin: 0 2px 0 2px;
 }
+
+.sidebar-bg-color {
+  background-color: #faa803;
+}
+
+.card {
+  border: 2px solid #022a2f;
+}
+
+.card-title {
+  color: #007BFF;
+}
+
+.display-color {
+  color: #007BFF;
+}
+
+.align {
+    text-align: center;
+}
+
+.color {
+    background-color: #9b7676;
+}
+
+.another-color {
+    background-color: rgba(128, 220, 98, 0.84);
+}
+
+.jumbotron {
+  padding: 20px;
+}
+
+.list-group-item {
+  border-radius: 5px;
+}
+
+.align-bottom {
+      position: absolute;
+      bottom: 20px;
+    }
