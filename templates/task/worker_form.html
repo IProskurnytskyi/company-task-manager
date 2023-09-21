@@ -1,17 +1,29 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load static %}
 
 {% block content %}
-  <h1>{{ object|yesno:"Update,Create" }} worker</h1>
-  <form action="" method="post" novalidate>
-    {% csrf_token %}
-    {{ form|crispy }}
+  <style>
+    body {
+      background-image: url({% static "images/bg-page.png" %});
+      background-size: cover;
+    }
+  </style>
 
-    <input type="submit" value="Submit" class="btn btn-primary">
-  </form>
-  {% if object %}
-    <a href="{{ worker.get_absolute_url }}" class="btn btn-dark mt-3">Back</a>
-  {% else %}
-    <a href="{% url "task:worker-list" %}" class="btn btn-dark mt-3">Back</a>
-  {% endif %}
+  <div class="row justify-content-center">
+    <div class="col-md-8 form-container">
+      <h1 class="form-title">{{ object|yesno:"Update,Create" }} Worker</h1>
+      <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <input type="submit" value="Submit" class="btn btn-primary submit-button">
+      </form>
+      {% if object %}
+        <a href="{{ worker.get_absolute_url }}" class="btn btn-dark mt-3">Cancel</a>
+      {% else %}
+        <a href="{% url 'task:worker-list' %}" class="btn btn-dark mt-3">Cancel</a>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
