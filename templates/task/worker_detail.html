@@ -20,7 +20,7 @@
       <h2>Not Completed Tasks</h2>
       {% for task in not_completed %}
         <hr>
-        <p><span class="task-name">Name:</span> {{ task.name }}</p>
+        <p><strong>Name:</strong><a href="{{ task.get_absolute_url }}"> {{ task.name }}</a></p>
         <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
         <p><strong>Deadline:</strong> {{ task.deadline }}</p>
         <p><strong>Priority:</strong> {{ task.priority }}</p>
@@ -32,7 +32,7 @@
       <h2>Completed Tasks</h2>
       {% for task in is_completed %}
         <hr>
-        <p><span class="task-name">Name:</span> {{ task.name }}</p>
+        <p><strong>Name:</strong><a href="{{ task.get_absolute_url }}"> {{ task.name }}</a></p>
         <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
         <p><strong>Deadline:</strong> {{ task.deadline }}</p>
         <p><strong>Priority:</strong> {{ task.priority }}</p>
