@@ -156,3 +156,12 @@ body {
 .delete-color {
   color: red;
 }
+
+.bottom-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 43%;
+  height: auto;
+  border-radius: 5px;
+}
