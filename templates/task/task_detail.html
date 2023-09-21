@@ -1,45 +1,49 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>
-    {{ task.name }}
-    <a href="{% url "task:task-delete" task.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
-    <a href="{% url "task:task-update" task.id %}" class="btn btn-secondary link-to-page">
-      Update
-    </a>
-  </h1>
-  <p>Task Type: {{ task.task_type.name }}</p>
-  <p>Description: {{ task.description }}</p>
-  <h1>
-    Assignees
+  <style>
+    body {
+      background-image: url({% static "images/detail_and_list_pages.png" %});
+      background-size: cover;
+    }
+  </style>
 
-  {% if user in task.assignees.all %}
-    <a href="{% url "task:assign-delete" task.id %}" class="btn btn-danger link-to-page">
-      Delete me from this task
-    </a>
-  {% else %}
-    <a href="{% url "task:assign-delete" task.id %}" class="btn btn-success link-to-page">
-      Assign me to this task
-    </a>
-  {% endif %}
+  <div class="header">
+    <h2>{{ task.name }}</h2>
+    <div>
+      <a href="{% url 'task:task-delete' task.id %}" class="btn btn-danger link-to-page">Delete</a>
+      <a href="{% url 'task:task-update' task.id %}" class="btn btn-secondary link-to-page">Update</a>
+    </div>
+  </div>
 
-  {% if task.is_completed %}
-    <a href="{% url "task:mark-unmark" task.id %}" class="btn btn-danger link-to-page">
-      Unmark as done
-    </a>
-  {% else %}
-    <a href="{% url "task:mark-unmark" task.id %}" class="btn btn-success link-to-page">
-      Mark as done
-    </a>
-  {% endif %}
-  </h1>
+  <div class="task-details">
+    <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+  </div>
+
+  <div class="assignee-section">
+    <h2>Assignees</h2>
+    <div>
+      {% if user in task.assignees.all %}
+        <a href="{% url 'task:assign-delete' task.id %}" class="btn btn-danger assignee-action">Delete me from this task</a>
+      {% else %}
+        <a href="{% url 'task:assign-delete' task.id %}" class="btn btn-success assignee-action">Assign me to this task</a>
+      {% endif %}
+
+      {% if task.is_completed %}
+        <a href="{% url 'task:mark-unmark' task.id %}" class="btn btn-danger">Unmark as done</a>
+      {% else %}
+        <a href="{% url 'task:mark-unmark' task.id %}" class="btn btn-success">Mark as done</a>
+      {% endif %}
+    </div>
+  </div>
 
   <hr>
+
   <ul>
     {% for assignee in task.assignees.all %}
-      <li>{{ assignee.username }} ({{ assignee.first_name }} {{ assignee.last_name }})</li>
+      <li class="assignee-item">{{ assignee.username }} ({{ assignee.first_name }} {{ assignee.last_name }})</li>
     {% endfor %}
   </ul>
 {% endblock %}

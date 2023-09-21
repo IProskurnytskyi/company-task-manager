@@ -88,3 +88,52 @@ body {
   color: #28a745;
   margin-left: 5px;
 }
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: orange;
+  z-index: 1;
+  padding: 10px;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.task-name {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-details {
+  margin-top: 20px;
+}
+
+.assignee-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assignee-item {
+  margin-bottom: 5px;
+}
+
+.assignee-action {
+  margin-left: 10px;
+}

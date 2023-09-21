@@ -1,46 +1,52 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>
-    Username: {{ worker.username }}
-    <a href="{% url "task:worker-delete" worker.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
-    <a href="{% url "task:worker-update" worker.id %}" class="btn btn-secondary link-to-page">
-      Update
-    </a>
-  </h1>
+  <style>
+    body {
+      background-image: url({% static "images/detail_and_list_pages.png" %});
+      background-size: cover;
+    }
+  </style>
 
-  <p><strong>First name:</strong> {{ worker.first_name }}</p>
-  <p><strong>Last name:</strong> {{ worker.last_name }}</p>
-  <p><strong>Email:</strong> {{ worker.email }}</p>
-  <p><strong>Position:</strong> {{ worker.position }}</p>
-  <p><strong>Is staff:</strong> {{ worker.is_staff }}</p>
-  <p><strong>Date joined:</strong> {{ worker.date_joined }}</p>
+  <div class="sticky-header form-inline">
+    <h2 class="username">Username: {{ worker.username }}</h2>
+    <a href="{% url 'task:worker-update' worker.id %}" class="btn btn-secondary ml-5">Update</a>
+    <a href="{% url 'task:worker-delete' worker.id %}" class="btn btn-danger ml-2">Delete</a>
+  </div>
 
-  <div class="ml-3">
-    <h2>Not completed tasks</h2>
-    {% for task in not_completed %}
-      <hr>
-      <p><strong>Name:</strong> {{ task.name }}</p>
-      <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
-      <p><strong>Deadline:</strong> {{ task.deadline }}</p>
-      <p><strong>Priority:</strong> {{ task.priority }}</p>
-      <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
-    {% empty %}
-      <h6>There are no not completed tasks!</h6>
-    {% endfor %}
+  <div class="content">
+    <p><strong>First Name:</strong> {{ worker.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ worker.last_name }}</p>
+    <p><strong>Email:</strong> {{ worker.email }}</p>
+    <p><strong>Position:</strong> {{ worker.position }}</p>
+    <p><strong>Is Staff:</strong> {{ worker.is_staff }}</p>
+    <p><strong>Date Joined:</strong> {{ worker.date_joined }}</p>
 
-    <h2>Completed tasks</h2>
-    {% for task in is_completed %}
+    <div class="ml-3">
+      <h2>Not Completed Tasks</h2>
+      {% for task in not_completed %}
         <hr>
-        <p><strong>Name:</strong> {{ task.name }}</p>
+        <p><span class="task-name">Name:</span> {{ task.name }}</p>
         <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
         <p><strong>Deadline:</strong> {{ task.deadline }}</p>
         <p><strong>Priority:</strong> {{ task.priority }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{task.id}}</p>
-    {% empty %}
-      <h6>There are no completed tasks!</h6>
-    {% endfor %}
+        <p class="text-muted"><strong>ID:</strong> {{ task.id }}</p>
+      {% empty %}
+        <p>There are no not completed tasks!</p>
+      {% endfor %}
+
+      <h2>Completed Tasks</h2>
+      {% for task in is_completed %}
+        <hr>
+        <p><span class="task-name">Name:</span> {{ task.name }}</p>
+        <p><strong>Task Type:</strong> {{ task.task_type.name }}</p>
+        <p><strong>Deadline:</strong> {{ task.deadline }}</p>
+        <p><strong>Priority:</strong> {{ task.priority }}</p>
+        <p class="text-muted"><strong>ID:</strong> {{ task.id }}</p>
+      {% empty %}
+        <p>There are no completed tasks!</p>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}
