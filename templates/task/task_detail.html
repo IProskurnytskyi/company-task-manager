@@ -1,6 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+  <style>
+    body {
+        background-image: url({% static "images/bg_image.png" %});
+        background-size: cover;
+    }
+  </style>
 
   <div class="header">
     <h2>{{ task.name }}</h2>
