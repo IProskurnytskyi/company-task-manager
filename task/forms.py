@@ -17,6 +17,12 @@ class WorkerForm(UserCreationForm):
         )
 
 
+class SignupForm(UserCreationForm):
+    class Meta(UserCreationForm):
+        model = Worker
+        fields = UserCreationForm.Meta.fields
+
+
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task

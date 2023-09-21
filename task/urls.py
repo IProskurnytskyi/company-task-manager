@@ -21,7 +21,7 @@ from task.views import (
     WorkerUpdateView,
     WorkerDeleteView,
     assign_delete_task,
-    mark_unmark_as_done,
+    mark_unmark_as_done, signup,
 )
 
 
@@ -99,6 +99,7 @@ urlpatterns = [
         WorkerDeleteView.as_view(),
         name="worker-delete"
     ),
+    path("signup/", signup, name="signup"),
 ]
 
 app_name = "task"

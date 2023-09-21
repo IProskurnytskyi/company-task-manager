@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views import generic
 
-from task.forms import WorkerForm, TaskForm, NameSearchForm, WorkerUsernameSearchForm
+from task.forms import WorkerForm, TaskForm, NameSearchForm, WorkerUsernameSearchForm, SignupForm
 from task.models import TaskType, Task, Position, Worker
 
 
@@ -247,3 +247,14 @@ def mark_unmark_as_done(request, pk) -> HttpResponse:
         task.is_completed = True
     task.save()
     return HttpResponseRedirect(reverse("task:task-detail", args=[pk]))
+
+
+def signup(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("login"))
+    else:
+        form = SignupForm()
+    return render(request, "task/signup.html", {"form": form})

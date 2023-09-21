@@ -8,8 +8,11 @@
       <a href="{% url 'logout' %}" class="btn btn-danger btn-block">Logout</a>
     </li>
   {% else %}
-    <li class="list-group-item sidebar-bg-color mb-3">
+    <li class="list-group-item sidebar-bg-color">
       <a href="{% url 'login' %}" class="btn btn-primary btn-block">Login</a>
+    </li>
+    <li class="list-group-item sidebar-bg-color mb-3">
+      <a href="{% url 'task:signup' %}" class="btn btn-primary btn-block">Sign Up</a>
     </li>
   {% endif %}
 

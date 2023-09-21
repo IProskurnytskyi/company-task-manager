@@ -50,7 +50,11 @@ class Task(models.Model):
 
 class Worker(AbstractUser):
     position = models.ForeignKey(
-        "Position", on_delete=models.CASCADE, related_name="workers"
+        "Position",
+        on_delete=models.CASCADE,
+        related_name="workers",
+        blank=True,
+        null=True
     )
 
     class Meta:
