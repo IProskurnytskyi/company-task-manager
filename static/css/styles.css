@@ -8,7 +8,7 @@ body {
 }
 
 .sidebar-bg-color {
-  background-color: rgb(255, 165, 0);
+  background-color: rgb(132, 155, 248);
 }
 
 .card {
@@ -73,7 +73,7 @@ body {
 }
 
 .table th {
-  background-color: #007BFF;
+  background-color: #405e7e;
   color: #fff;
   border: 1px solid #dee2e6;
 }
@@ -155,4 +155,8 @@ body {
 
 .submit-button {
   margin-top: 20px;
+}
+
+.delete-color {
+  color: red;
 }

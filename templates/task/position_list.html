@@ -1,13 +1,6 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
-  <style>
-    body {
-      background-image: url({% static "images/bg-page.png" %});
-      background-size: cover;
-    }
-  </style>
 
   <h1>Position List
     <a href="{% url 'task:position-create' %}" class="btn btn-primary link-to-page">Create</a>
@@ -32,7 +25,7 @@
             <td>{{ position.name }}</td>
             <td><a href="{% url 'task:position-update' position.id %}">Update</a></td>
             <td>
-              <a href="{% url 'task:position-delete' position.id %}">Delete</a>
+              <a href="{% url 'task:position-delete' position.id %}" class="delete-color">Delete</a>
             </td>
           </tr>
         {% endfor %}

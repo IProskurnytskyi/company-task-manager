@@ -1,13 +1,6 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
-  <style>
-    body {
-      background-image: url({% static "images/bg-page.png" %});
-      background-size: cover;
-    }
-  </style>
 
   <h1>Worker List
     <a href="{% url 'task:worker-create' %}" class="btn btn-primary link-to-page">Create</a>
