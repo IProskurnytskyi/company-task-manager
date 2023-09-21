@@ -1,38 +1,44 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>
-    Task Type List
-    <a href="{% url "task:task-type-create" %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
+  <style>
+    body {
+      background-image: url({% static "images/list_page.png" %});
+      background-size: cover;
+    }
+  </style>
+
+  <h1>Task Type List
+    <a href="{% url 'task:task-type-create' %}" class="btn btn-primary link-to-page">Create</a>
   </h1>
 
   {% include "includes/search_form.html" %}
 
   {% if task_type_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-
-      {% for task_type in task_type_list %}
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td>{{ task_type.id }}</td>
-          <td>{{ task_type.name }}</td>
-          <td>
-            <a href="{% url "task:task-type-update" task_type.id %}">Update</a>
-          </td>
-          <td>
-            <a style="color: red" href="{% url "task:task-type-delete" task_type.id %}">
-              Delete
-            </a>
-          </td>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
-      {% endfor %}
+      </thead>
+      <tbody>
+        {% for task_type in task_type_list %}
+          <tr>
+            <td>{{ task_type.id }}</td>
+            <td>{{ task_type.name }}</td>
+            <td>
+              <a href="{% url 'task:task-type-update' task_type.id %}">Update</a>
+            </td>
+            <td>
+              <a href="{% url 'task:task-type-delete' task_type.id %}">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
   {% else %}
     <p>There are no task types yet.</p>

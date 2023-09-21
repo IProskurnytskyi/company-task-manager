@@ -1,36 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>
-    Position List
-    <a href="{% url "task:position-create" %}" class="btn btn-primary link-to-page">
-      Create
-    </a>
+  <style>
+    body {
+      background-image: url({% static "images/list_page.png" %});
+      background-size: cover;
+    }
+  </style>
+
+  <h1>Position List
+    <a href="{% url 'task:position-create' %}" class="btn btn-primary link-to-page">Create</a>
   </h1>
 
   {% include "includes/search_form.html" %}
 
   {% if position_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Update</th>
-        <th>Delete</th>
-      </tr>
-
-      {% for position in position_list %}
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <td>{{ position.id }}</td>
-          <td>{{ position.name }}</td>
-          <td><a href="{% url "task:position-update" position.id %}">Update</a></td>
-          <td>
-            <a style="color: red" href="{% url "task:position-delete" position.id %}">
-              Delete
-            </a>
-          </td>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
         </tr>
-      {% endfor %}
+      </thead>
+      <tbody>
+        {% for position in position_list %}
+          <tr>
+            <td>{{ position.id }}</td>
+            <td>{{ position.name }}</td>
+            <td><a href="{% url 'task:position-update' position.id %}">Update</a></td>
+            <td>
+              <a href="{% url 'task:position-delete' position.id %}">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
     </table>
   {% else %}
     <p>There are no positions yet.</p>
