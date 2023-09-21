@@ -1,14 +1,14 @@
 body {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .link-to-page {
-    float: right;
-    margin: 0 2px 0 2px;
+  float: right;
+  margin: 0 2px 0 2px;
 }
 
 .sidebar-bg-color {
-  background-color: #faa803;
+  background-color: rgba(255, 165, 0, 0.9);
 }
 
 .card {
@@ -24,15 +24,15 @@ body {
 }
 
 .align {
-    text-align: center;
+  text-align: center;
 }
 
 .color {
-    background-color: #9b7676;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .another-color {
-    background-color: rgba(128, 220, 98, 0.84);
+  background-color: rgba(53, 147, 64, 0.84);
 }
 
 .jumbotron {
@@ -43,7 +43,27 @@ body {
   border-radius: 5px;
 }
 
-.align-bottom {
-      position: absolute;
-      bottom: 20px;
-    }
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.error-message {
+  color: #ff0000;
+}
+
+.logout-message {
+  text-align: center;
+  font-size: 44px;
+  color: #007BFF;
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #007BFF;
+}
