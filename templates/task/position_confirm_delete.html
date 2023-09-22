@@ -3,15 +3,20 @@
 {% block content %}
     <div class="row justify-content-center">
       <div class="col-md-6 form-container text-center">
-        <h1 class="text-danger">Delete Position?</h1>
-        <p><i>All workers with this position will be deleted as well.</i></p>
-        <form action="" method="post">
-          {% csrf_token %}
-          <div class="mb-3">
-            <input type="submit" value="Yes, delete" class="btn btn-danger">
-          </div>
-          <a href="{% url 'task:position-list' %}" class="btn btn-primary">Cancel</a>
-        </form>
+        {% if user.is_superuser %}
+          <h1 class="text-danger">Delete Position?</h1>
+          <p><i>All workers with this position will be deleted as well.</i></p>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <input type="submit" value="Yes, delete" class="btn btn-danger">
+            </div>
+            <a href="{% url 'task:position-list' %}" class="btn btn-primary">Cancel</a>
+          </form>
+        {% else %}
+          <h2 class="text-danger">You cannot delete any Positions because you are not an admin!</h2>
+          <a href="{% url 'task:position-list' %}" class="btn btn-primary mt-3">Back</a>
+        {% endif %}
       </div>
     </div>
 
