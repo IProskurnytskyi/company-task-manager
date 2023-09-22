@@ -189,7 +189,7 @@
     "fields": {
       "name": "IT Helpdesk Support",
       "description": "Provide technical assistance to end-users, troubleshoot hardware and software issues, and ensure smooth daily IT operations.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": false,
       "priority": "urgent",
       "task_type": 5,
@@ -205,7 +205,7 @@
     "fields": {
       "name": "Web Application Development",
       "description": "Design and develop interactive web applications that meet client requirements, leveraging modern technologies and frameworks.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": false,
       "priority": "high",
       "task_type": 4,
@@ -222,7 +222,7 @@
     "fields": {
       "name": "Cloud Migration",
       "description": "Plan and execute the migration of on-premises systems and data to cloud-based platforms for scalability and cost-efficiency.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": true,
       "priority": "urgent",
       "task_type": 2,
@@ -242,7 +242,7 @@
     "fields": {
       "name": "Database Optimization",
       "description": "Analyze and optimize database performance to enhance data retrieval and storage efficiency.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": false,
       "priority": "medium",
       "task_type": 3,
@@ -259,7 +259,7 @@
     "fields": {
       "name": "Network Security Assessment",
       "description": "Conduct a comprehensive security assessment to identify vulnerabilities in a network and recommend safeguards.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": false,
       "priority": "low",
       "task_type": 1,
@@ -274,7 +274,7 @@
     "fields": {
       "name": "Software Bug Fixing",
       "description": "Identify and resolve software bugs and issues to ensure the smooth operation of applications.",
-      "deadline": "2024-10-05T03:26:35Z",
+      "deadline": "2024-10-05",
       "is_completed": true,
       "priority": "urgent",
       "task_type": 3,

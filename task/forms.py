@@ -28,9 +28,9 @@ class TaskForm(forms.ModelForm):
         model = Task
         fields = "__all__"
 
-    deadline = forms.DateTimeField(
+    deadline = forms.DateField(
         error_messages={
-            "invalid": "Enter a valid date/time in the format: YYYY-MM-DD HH:MM:SS"
+            "invalid": "Enter a valid date in the format: YYYY-MM-DD"
         }
     )
 
@@ -42,10 +42,10 @@ class TaskForm(forms.ModelForm):
 
     def clean_deadline(self):
         deadline = self.cleaned_data["deadline"]
-        if deadline < timezone.now():
+        if deadline < timezone.localdate():
             raise ValidationError("The deadline cannot be set in the past")
 
-        max_deadline = timezone.now() + timezone.timedelta(days=365 * 20)
+        max_deadline = timezone.localdate() + timezone.timedelta(days=365 * 20)
 
         if deadline > max_deadline:
             raise ValidationError("The deadline cannot be set more than 20 years into the future")
