@@ -19,15 +19,17 @@ Python3 must be already installed
 ```shell
 git clone https://github.com/IProskurnytskyi/company-task-manager
 cd company-task-manager
+git checkout develop
 python -m venv venv
 if macOS: source venv/bin/activate
 if Windows: venv\Scripts\activate.bat
 pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver
 ```
-Here you clone git repository into your computer, change working directory then
-you activate virtual environment in order to install requirements.txt virtually (not into your operating system)
-and activate it. Then you install required modules and run server.
+Here you clone git repository into your computer, change working directory then checkout to the develop branch.
+Then you activate virtual environment in order to install requirements.txt virtually (not into your operating system)
+and activate it. Then you install required modules make migrations and run server.
 
 ## Features
 
