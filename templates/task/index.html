@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <style>
+    body {
+        background-image: url({% static "images/index.png" %});
+        background-size: cover;
+    }
+  </style>
+  <div class="jumbotron color">
+    <h1 class="display-color align">Welcome to the Task Manager</h1>
+    <p class="lead align">Manage your tasks efficiently with Task Manager.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card color">
+        <div class="card-body">
+          <h2 class="display-color">Record Counts</h2>
+          <ul class="list-group">
+            <li class="list-group-item another-color"><strong>Task types:</strong> <span class="text-primary">{{ task_types }}</span></li>
+            <li class="list-group-item another-color"><strong>Tasks:</strong> <span class="text-primary">{{ tasks }}</span></li>
+            <li class="list-group-item another-color"><strong>Positions:</strong> <span class="text-primary">{{ positions }}</span></li>
+            <li class="list-group-item another-color"><strong>Workers:</strong> <span class="text-primary">{{ workers }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card color">
+        <div class="card-body">
+          <h2 class="display-color">Page Visits</h2>
+          <p class="card-text">You have visited this page <span class="text-primary">{{ num_visits }}</span> time<span class="text-primary">{{ num_visits|pluralize }}</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block image %}
+  <img src="{% static "images/home_image.png" %}" alt="Image" class="bottom-image">
+{% endblock %}

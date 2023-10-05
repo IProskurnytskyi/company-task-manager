@@ -1,0 +1,288 @@
+[
+  {
+    "model": "task.tasktype",
+    "pk": 1,
+    "fields": {
+      "name": "Bug"
+    }
+  },
+  {
+    "model": "task.tasktype",
+    "pk": 2,
+    "fields": {
+      "name": "New feature"
+    }
+  },
+  {
+    "model": "task.tasktype",
+    "pk": 3,
+    "fields": {
+      "name": "Refactoring"
+    }
+  },
+  {
+    "model": "task.tasktype",
+    "pk": 4,
+    "fields": {
+      "name": "QA"
+    }
+  },
+  {
+    "model": "task.tasktype",
+    "pk": 5,
+    "fields": {
+      "name": "Breaking Change"
+    }
+  },
+  {
+    "model": "task.position",
+    "pk": 1,
+    "fields": {
+      "name": "Project Manager"
+    }
+  },
+  {
+    "model": "task.position",
+    "pk": 2,
+    "fields": {
+      "name": "Developer"
+    }
+  },
+  {
+    "model": "task.position",
+    "pk": 3,
+    "fields": {
+      "name": "Software engineer"
+    }
+  },
+  {
+    "model": "task.position",
+    "pk": 4,
+    "fields": {
+      "name": "QA"
+    }
+  },
+  {
+    "model": "task.position",
+    "pk": 5,
+    "fields": {
+      "name": "Designer"
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$6uM28XWOFX6ewyloJzjqmt$L+ZhofPylneoaL2iZS4sZu4ZMUNb4oIevfAdzOMn/eE=",
+      "last_login": "2023-08-08T14:14:03Z",
+      "is_superuser": true,
+      "username": "admin.user",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin.user@task.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-08-08T13:58:29Z",
+      "position": 1,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$73Z1Y57bcoscZ37s9rE9v0$4SEQ0TtXwJKzO5/CRdFSrTifatiPjkZ38gM2H8Kqsdg=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "joyce.byers",
+      "first_name": "Joyce",
+      "last_name": "Byers",
+      "email": "joyce.byers@task.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-08-08T14:17:04Z",
+      "position": 2,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$QtPol3T7x9quBj4BnbnVwW$UwT4kihkRfSvQEWEeuqVKwMgis2ikKVZfJDBcQMvOKY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jim.hopper",
+      "first_name": "Jim",
+      "last_name": "Hopper",
+      "email": "jim.hopper@task.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-08-08T14:19:09Z",
+      "position": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l1$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jonathan.byers",
+      "first_name": "Jonathan",
+      "last_name": "Byers",
+      "email": "jonathan.byers@task.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-08-08T14:19:09Z",
+      "position": 4,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l1$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "dustin.henderson",
+      "first_name": "Dustin",
+      "last_name": "Henderson",
+      "email": "dustin.henderson@task.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-08-09T14:19:09Z",
+      "position": 5,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.worker",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$9yU0PLTDKlL02PedUtk2l2$LKjj8O1xGiPGEkDpjsHk87db1iLgt8dgDqECzcsivio",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "mike.wheeler",
+      "first_name": "Mike",
+      "last_name": "Wheeler",
+      "email": "mike.wheeler@task.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-08-09T14:19:09Z",
+      "position": 3,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 1,
+    "fields": {
+      "name": "IT Helpdesk Support",
+      "description": "Provide technical assistance to end-users, troubleshoot hardware and software issues, and ensure smooth daily IT operations.",
+      "deadline": "2024-10-05",
+      "is_completed": false,
+      "priority": "urgent",
+      "task_type": 5,
+      "assignees": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 2,
+    "fields": {
+      "name": "Web Application Development",
+      "description": "Design and develop interactive web applications that meet client requirements, leveraging modern technologies and frameworks.",
+      "deadline": "2024-10-05",
+      "is_completed": false,
+      "priority": "high",
+      "task_type": 4,
+      "assignees": [
+        6,
+        3,
+        1
+      ]
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 3,
+    "fields": {
+      "name": "Cloud Migration",
+      "description": "Plan and execute the migration of on-premises systems and data to cloud-based platforms for scalability and cost-efficiency.",
+      "deadline": "2024-10-05",
+      "is_completed": true,
+      "priority": "urgent",
+      "task_type": 2,
+      "assignees": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 4,
+    "fields": {
+      "name": "Database Optimization",
+      "description": "Analyze and optimize database performance to enhance data retrieval and storage efficiency.",
+      "deadline": "2024-10-05",
+      "is_completed": false,
+      "priority": "medium",
+      "task_type": 3,
+      "assignees": [
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 5,
+    "fields": {
+      "name": "Network Security Assessment",
+      "description": "Conduct a comprehensive security assessment to identify vulnerabilities in a network and recommend safeguards.",
+      "deadline": "2024-10-05",
+      "is_completed": false,
+      "priority": "low",
+      "task_type": 1,
+      "assignees": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "task.task",
+    "pk": 6,
+    "fields": {
+      "name": "Software Bug Fixing",
+      "description": "Identify and resolve software bugs and issues to ensure the smooth operation of applications.",
+      "deadline": "2024-10-05",
+      "is_completed": true,
+      "priority": "urgent",
+      "task_type": 3,
+      "assignees": [
+        2,
+        3,
+        4
+      ]
+    }
+    }
+]

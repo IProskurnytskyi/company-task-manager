@@ -1,0 +1,167 @@
+body {
+  margin-top: 20px;
+}
+
+.link-to-page {
+  float: right;
+  margin: 0 2px 0 2px;
+}
+
+.sidebar-bg-color {
+  background-color: rgb(132, 155, 248);
+}
+
+.card {
+  border: 2px solid #022a2f;
+}
+
+.display-color {
+  color: #007BFF;
+}
+
+.align {
+  text-align: center;
+}
+
+.color {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.another-color {
+  background-color: rgba(53, 147, 64, 0.84);
+}
+
+.jumbotron {
+  padding: 20px;
+}
+
+.list-group-item {
+  border-radius: 5px;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 35px;
+}
+
+.error-message {
+  color: #ff0000;
+}
+
+.logout-message {
+  text-align: center;
+  font-size: 44px;
+  color: #007BFF;
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #007BFF;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: #405e7e;
+  color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.table td {
+  border: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+.me-label {
+  font-weight: bold;
+  color: #28a745;
+  margin-left: 5px;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: orange;
+  z-index: 1;
+  padding: 10px;
+}
+
+.sticky-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.task-name {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-details {
+  margin-top: 20px;
+}
+
+.assignee-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assignee-item {
+  margin-bottom: 5px;
+}
+
+.assignee-action {
+  margin-left: 10px;
+}
+
+.form-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  margin-top: 20px;
+}
+
+.delete-color {
+  color: red;
+}
+
+.bottom-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+}

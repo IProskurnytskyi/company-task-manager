@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Task Type List
+    <a href="{% url 'task:task-type-create' %}" class="btn btn-primary link-to-page">Create</a>
+  </h1>
+
+  {% include "includes/search_form.html" %}
+
+  {% if task_type_list %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task_type in task_type_list %}
+          <tr>
+            <td>{{ task_type.id }}</td>
+            <td>{{ task_type.name }}</td>
+            <td>
+              <a href="{% url 'task:task-type-update' task_type.id %}">Update</a>
+            </td>
+            <td>
+              <a href="{% url 'task:task-type-delete' task_type.id %}" class="delete-color">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>There are no task types yet.</p>
+  {% endif %}
+{% endblock %}
