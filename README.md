@@ -4,7 +4,7 @@ Django project for managing tasks.
 Manage your tasks efficiently with Task Manager.
 
 # Check it out!
-[Task Manager project deployed to Render]()
+[Task Manager project deployed to Render](https://task-manager-wam2.onrender.com/)
 
 In order to log in to the website you can use test user credentials or sign-up:
 ```shell
